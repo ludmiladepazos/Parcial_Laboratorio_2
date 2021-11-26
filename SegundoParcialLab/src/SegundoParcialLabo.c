@@ -70,6 +70,7 @@ int main(void)
 				if(controller_saveAsTextMinotauro("listaMinotauro.csv", listaLibros))
 				{
 					printf("Lista creada\n");
+
 				}
 				else
 				{
@@ -82,6 +83,7 @@ int main(void)
 					printf("Si el precio es mayor o igual a 300 y la editorial es Planeta tiene un 20%% de descuento\n"
 							"Si el precio es menor igual a 200  y la editorial es Siglo XXI Editores tiene un 10%% de descuento\n"
 							"Archivo creado con exito\n");
+
 				}
 				else
 				{
@@ -92,6 +94,11 @@ int main(void)
 				printf("Confirma salida s/n: \n");
 				fflush(stdin);
 				scanf("%c",&salir);
+				if(salir == 's')
+				{
+					ll_deleteLinkedList(listaLibros);
+					ll_deleteLinkedList(listaEditorial);
+				}
 				break;
 		   default:
 				printf("Error,opcion invalida \n");
